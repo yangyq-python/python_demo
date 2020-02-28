@@ -60,6 +60,6 @@ print((2+3)*4)
 print(0.2+0.1)
 #函数str()的使用：避免类型错误
 age=23
-message="Happy "+str(age)+"rd Birthday!"   #str()函数将int类型的age转换为字符串类型
+message="Happy "+str(age)+"rd Birthday!"  #str()函数将int类型的age转换为字符串类型
 print(message)
 #注释：在Python中，注释用井号（#）标识，井号后面的内容都会被Python解释器忽略。此处不再重复
