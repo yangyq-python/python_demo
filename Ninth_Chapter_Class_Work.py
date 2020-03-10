@@ -189,4 +189,3 @@ for n in range(10):
     else:
         print("掷骰子次数已用完")
 print(a)
-
