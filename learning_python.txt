@@ -1,0 +1,3 @@
+In Python you can access list.
+In Python you can access dict.
+In Python you can shorten test practice.
