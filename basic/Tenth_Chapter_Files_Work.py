@@ -3,7 +3,7 @@ import  json
 # 10-1Python学习笔记:在文本编辑器中新建一个文件,写几句话来总结一下你至此学到的Python知识,其中每一行都以"In Python you can "打头.将这个
 # 文件命名为learning_python.txt,并将其存储到为完成本章练习而编写的程序所在的目录中.编写一个程序,它读取这个文件,并将你所写的内容打印三次:
 print("第一次打印时读取整个文件");
-file_name='learning_python.txt'
+file_name= 'learning_python.txt'
 with open(file_name) as file_object:
     print(file_object.read())
 print("\n第二次打印时遍历文件对象;")
@@ -32,7 +32,7 @@ for line in lines:
 #     file_object.write(message)
 # 10-4 访客名单：编写一个while循环，提示用户输入其名字。用户输入其名字后，在屏幕上打印一句问候语，并将一条访问记录添加到文件guest_book.txt
 # 中。确保这个文件中的每条记录都占一行。
-file_name='guest_book.txt'
+file_name= 'guest_book.txt'
 message = "Please enter your name: "
 message += "\nEnter 'q' to end the program."
 a=''
@@ -101,7 +101,7 @@ print(message.count('the'))
 print(message.lower().count('the'))
 # 10-11喜欢的数字：编写一个程序，提示用户输入他喜欢的数字，并使用json.dump()将这个数字存储到文件中。再编写一个程序，从文件中读取这个值，
 # 并打印消息“I know your favorite number! It's_____.”
-file_name='lovenumber.json'
+file_name= 'lovenumber.json'
 message='Please enter favorite number: '
 # with open(file_name,'w') as f:
 #     number=input(message)
@@ -127,7 +127,7 @@ else:
 #   为此，在greet_user()中打印欢迎用户回来的消息前，先询问他用户名是否是对的。如果不对，就调用get_new_username()让用户输入正确的用户名。
 def get_stored_username():
     """如果存储了用户名，就获取它"""
-    file_name='username.json'
+    file_name= 'username.json'
     try:
         with open(file_name) as f_obj:
             username=json.load(f_obj)
@@ -138,7 +138,7 @@ def get_stored_username():
 def get_new_username():
     """提示用户输入用户名"""
     username=input("What is your name?")
-    file_name='username.json'
+    file_name= 'username.json'
     with open(file_name,'w') as f_obj:
         json.dump(username,f_obj)
     return username

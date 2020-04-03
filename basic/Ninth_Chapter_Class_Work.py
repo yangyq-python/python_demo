@@ -1,4 +1,4 @@
-import Ninth_Chapter_Class as nc
+from basic import Ninth_Chapter_Class as nc
 from random import randint
 
 # 9-1餐馆：创建一个名为Restaurant的类，其方法__init__()设置两个属性：restaurant_name和cuisine_type。创建一个名为describe_restaurant()

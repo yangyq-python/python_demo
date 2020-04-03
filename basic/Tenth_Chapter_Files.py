@@ -32,14 +32,14 @@ with open('pi_digits.txt') as file_object:  # txt文件保存到本章程序所�
 # Windows系统有时能够正确地解读文件路径中的斜杠.如果你使用的是Windows系统,且结果不符合预期,请确保在文件路径中使用的是反斜杠.另外,
 # 由于反斜杠在Python中被视为转义标记,为在Windows中确保万无一失,应以原始字符串的方式指定路径,即在开头的单引号前加上r.
 # c.逐行读取:读取文件时,常常需要检查其中的每一行:你可能要在文件中查找特定的信息,或者要以某种方式修改文件中的文本.要以每次一行的方式检查文件,可对文件对象使用for循环
-file_name='pi_digits.txt'
+file_name= 'pi_digits.txt'
 with open(file_name) as file_object:  #关键字with,让Python负责妥善地打开和关闭文件.
     for line in file_object:
         print(line.rstrip())  #print语句会加上一个换行符.rstrip()函数的作用就是消除多余的空白行,
 # d.创建一个包含文件各行内容的列表:使用关键字with时,open()返回的文件对象只在with代码块内可用.如果要在with代码块外访问文件的内容,
 # 可在with代码块内将文件的各行存储在一个列表中,并在with代码块外使用该列表:可以立即处理文件的各个部分,也可推迟到程序后面再处理.
 print("创建一个包含文件各行内容的列表")
-file_name='pi_digits.txt'
+file_name= 'pi_digits.txt'
 with open(file_name) as file_object:
     lines=file_object.readlines()  #方法readlines()从文件中读取每一行,并将其存储在一个列表中;
 
@@ -47,7 +47,7 @@ for line in lines:
     print(line.rstrip())
 # e.使用文件的内容:将文件读取到内存中后,就可以以任何方式使用这些数据了.
 print("使用文件的内容")
-file_name='pi_digits.txt'
+file_name= 'pi_digits.txt'
 with open(file_name) as file_object:
     lines=file_object.readlines()
 pi_string=''
@@ -61,7 +61,7 @@ print(len(pi_string))
 print(pi_string[:22]+".....")  #包含了整数位和小数点
 # PS:对于你可处理的数据量,Python没有任何限制;只要系统的内存足够多,你想处理多少都可以.
 # g.圆周率值中包含你的生日吗?可将生日表示位一个由数字组成的字符串,再检查这个字符串是否包含在pi_string中;
-file_name='pi_digits.txt'
+file_name= 'pi_digits.txt'
 with open(file_name) as file_object:
     lies=file_object.readlines()
 
@@ -78,7 +78,7 @@ for line in lines:
 # 保存数据最简单的方式之一是将其写入到文件中.通过将输出写入文件,即便关闭包含程序输出的终端窗口,这些输出也依然存在:你可以在程序结束
 # 运行后查看这些输出,可与别人分享输出文件,还可编写程序来将这些输出读取到内存中并进行处理.
 # a.写入空文件:要将文件写入文件,你在调用open()时需要提供另一个实参,告诉Python你要写入打开的文件.
-file_name='programming.txt'
+file_name= 'programming.txt'
 with open(file_name,'w') as file_object:  #如果文件不存在,则会在当前程序运行的目录下,自动创建一个文件
     file_object.write("I love programming") #在上面创建的文件中,写入内容
     # file_object.write("I love creating new games.")
@@ -87,14 +87,14 @@ with open(file_name,'w') as file_object:  #如果文件不存在,则会在当前
 # 如果你要写入的文件不存在,在函数open()将自动创建它.然后,以写入'w'模式打开文件时千万要小心,因为如果指定的文件已存在,Python将在返回文件对象前清空该文件.
 # PS:Python只能将字符串写入文本文件.要将数值数据存储到文本文件中,必须先使用函数str()将其转换为字符串格式.
 # b.写入多行：函数write()不会在你写入的文本末尾添加换行符，因此如果你写入多行时没有指定换行符，文件看起来可能不是你希望的那样：
-file_name='programming.txt'
+file_name= 'programming.txt'
 with open(file_name,'w') as file_object:
     file_object.write("I love programming.\n")
     file_object.write("I love creating new games.\n")  #要让每个字符串都单独占一行，则需要在write()语句中包含换行符，否则两行内容挤在一起
 # PS：像现实到终端的输出一样，还可以使用空格、制表符和空行来设置这些输出的格式。
 # c.附加到文件：如果你要给文件添加内容，而不是覆盖原有的内容，可以以附加模式（'a'）打开文件。你以附加模式打开文件时，Python不会在返回文件对象前清空文件，
 # 而你写入到文件的行都将添加到文件末尾。如果指定的文件不存在，Python将为你创建一个空文件。
-file_name='programming.txt'
+file_name= 'programming.txt'
 with open(file_name,'a') as file_object:  #指定实参'a'，以便将内容附加到文件末尾，而不是覆盖文件原来的内容。
     file_object.write("I also love finding meaning in large datasets.\n")
     file_object.write("I love creating apps that can run in  a browser.\n")#最终的结果是，文件原来的内容还在，它们后面是我们刚添加的内容。
@@ -210,7 +210,7 @@ print("失败时一声不吭")#要让程序失败时一声不吭，可像通常�
 print("使用json.dump()和json.load()")
 # 函数json.dump()接受两个实参：要存储的数据以及可用于存储数据的文件对象
 numbers=[2,3,5,7,11,13]
-file_name='number.json'  #通常使用文件扩展名.json来指出文件存储的数据为JSON格式
+file_name= 'number.json'  #通常使用文件扩展名.json来指出文件存储的数据为JSON格式
 with open(file_name,'w') as f_obj:
     json.dump(numbers,f_obj)
 # 案例分析：我们先导入模块json，再创建一个数字列表。指定了要将该数字列表存储到其中的文件的名称。接下来，我们以写入模式打开这个文件，让json
@@ -222,7 +222,7 @@ print(new_number)
 print("保存和读取用户生成的数据")
 # 对于用户生成的数据，使用json保存它们大有裨益，因为如果不以某种方式进行存储，等程序停止运行时用户的信息将丢失。
 # username=input("What is your name? ")
-file_name='username.json'
+file_name= 'username.json'
 # with open(file_name,'w') as f_obj:
 #     json.dump(username,f_obj)
 #     print("We'll remeber you when you come back, "+username+"!")
@@ -247,7 +247,7 @@ print("***********************重构********************")
 # 重构让代码更清晰、更易于理解、更容易扩展。
 def get_stored_username():
     """如果存储了用户名，就获取它"""
-    file_name='username.json'
+    file_name= 'username.json'
     try:
         with open(file_name) as f_obj:
             username=json.load(f_obj)
@@ -258,7 +258,7 @@ def get_stored_username():
 def get_new_username():
     """提示用户输入用户名"""
     username=input("What is your name?")
-    file_name='username.json'
+    file_name= 'username.json'
     with open(file_name,'w') as f_obj:
         json.dump(username,f_obj)
     return username

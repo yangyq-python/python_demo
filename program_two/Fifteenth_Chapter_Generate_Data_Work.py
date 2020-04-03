@@ -1,9 +1,9 @@
-import matplotlib.pyplot as plt
 import pygal
 
 from random import randint
 from random import  choice
-from Fifteenth_Chapter_Generate_Data import RandomWalk
+
+
 # 15-1立方：数字的三次方被称为其立方。请绘制一个图形，显示前5个整数的立方值，再绘制一个图形，显示前5000个整数的立方值。
 # x_values=list(range(1,5000))
 # y_values=[x**3 for x in x_values]

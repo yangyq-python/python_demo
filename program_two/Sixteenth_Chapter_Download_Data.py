@@ -16,7 +16,7 @@ from urllib.request import urlopen
 # 数据，并使用Pygal绘制图形以探索价格变化的周期性。
 # filename='sitka_weather_07-2014.csv'
 # filename='sitka_weather_2014.csv'
-filename='death_valley_2014.csv'
+filename= '../basic/death_valley_2014.csv'
 with open(filename) as f:
     reader=csv.reader(f)
     header_row=next(reader) #返回文件头
@@ -95,7 +95,7 @@ req=response.read()  #读取文件
 # print(file_urllib==file_requests)
 print("提取相关的数据")
 #将数据加载到一个列表中
-file_name='btc_close_2017_urllib.json'
+file_name= '../basic/btc_close_2017_urllib.json'
 with open(file_name) as f:
     btc_data=json.load(f)
 
@@ -158,7 +158,7 @@ line_chart_weekday=draw_line(weekdays_int,close[1:idx_week],'收盘价星期均�
 line_chart_weekday.x_labels=['周一','周二','周三','周四','周五','周六','周日']
 # line_chart_weekday.render_to_file('收盘价星期均值（￥）.svg')
 print("收盘价数据仪表盘")
-with open('收盘价Dashboard.html','w',encoding='utf-8') as html_file:
+with open('收盘价Dashboard.html', 'w', encoding='utf-8') as html_file:
     html_file.write('<html><head><title>收盘价Dashboard</title><meta charset="utf-8"></head></body>\n')
     for svg in [
         '收盘价折线图（￥）.svg','收盘价对数变换折线图（￥）.svg','收盘价月日均值（￥）.svg',
